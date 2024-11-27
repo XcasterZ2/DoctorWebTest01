@@ -1,0 +1,468 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Prompt:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Sarabun:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Karla:ital,wght@0,200..800;1,200..800&family=Outfit:wght@100..900&family=Sarabun:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Prompt", sans-serif;
+    font-weight: 100;
+    font-style: normal;
+}
+
+html, body {
+    height: 100%;
+    overflow: auto; /* เพิ่มการแสดง scrollbar เมื่อเนื้อหาล้น */
+
+
+}
+
+@media (max-width: 768px) {
+  .prescription-section {
+      width: 100%; /* ใช้ความกว้างเต็มที่ */
+      margin: 10px; /* ปรับ margin ให้เหมาะสม */
+  }
+}
+.body {
+    /* padding: 20px; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #23395B;
+    width: 100%; /* แก้ไขจาก 100vw เป็น 100% */
+    height: 100vh;
+
+    overflow: auto; /* เพิ่มการแสดง scrollbar เมื่อเนื้อหาล้น */
+
+}
+.container {
+    background-color: #23395B;
+    width: auto;
+    height: auto;
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    gap: 20px;
+}
+
+.left_container{
+    width: 290px;
+    height: auto;
+    border-radius: 20px;
+    background-color: #FCF9F9;
+    border: 1px;
+    border-color: #000000;
+    position: relative;
+    display: flex;
+    justify-items: center;
+    padding: 20px 5px;
+    flex-direction: column;
+}
+.right_container{
+    width: 1580px;
+    height: auto;
+    border-radius: 20px;
+    background-color: #FCF9F9;
+    border: 1px;
+    border-color: #000000;
+     position: relative; /* ให้ medicine_paper อ้างอิง */
+    display: block; /* แก้หากเคยใช้ flex/grid */
+    padding: 10px;
+}
+
+.name{
+    font-size: 30px;
+    color: #000000;
+    text-align: center;
+    font-weight: 700;
+}
+
+.profile_img_container{
+    display: flex;
+    justify-content: center;
+    justify-items: center;
+    margin-top: 20px;
+    position: relative;
+
+}
+.profile_img{
+    width: 190px;
+    height: 190px;
+    border-radius: 50%;
+    overflow: hidden;
+    background-color: #000000;
+    
+}
+
+.profile_img img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.gender{
+    width: 52px;
+    height: 24px;
+    background-color: #fffefe;
+    position: absolute;
+    bottom: 0px;
+    right: 10px;
+    display: flex;
+    gap: 2px;
+}
+
+.gender button{
+    border: none;
+}
+
+.age{
+    width: 280px;
+    height: 44px;
+    border-radius: 8px;
+    background: #D9D9D9;
+    margin-top: 20px;
+    display: flex;
+    padding: 5px 5px;
+    gap: 8px;
+}
+
+.age span{
+    justify-items: center;
+    font-weight: 700;
+    align-items: center;
+    display: flex;
+}
+
+.age_input{
+    width: 220px;
+    height: 35px;
+    background-color: #fffefe;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    padding: 10px 10px;
+}
+
+.bar_btn_1{
+    width: 100%;
+    height: 70px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+}
+
+.bar_btn_1 button{
+    width: 92px;
+    height: 50px;
+    border-radius: 8px;
+    background-color: #2C2C2C;
+    color: #fffefe;
+    transition: background-color 0.3s ease, color 0.3s ease; /* เพิ่ม transition effect */
+    font-weight: 500;
+    letter-spacing: 1.5px;
+}
+
+.bar_btn_1 button:hover { /* เพิ่ม hover effect */
+    background-color: #ffffff; /* เปลี่ยนสีพื้นหลังเมื่อ hover */
+    color: #0c0c0c; /* เปลี่ยนสีตัวอักษรเมื่อ hover */
+}
+
+.scroll_menu_container{
+    width: 100%; /* ความกว้างเต็ม */
+    max-width: 254px; /* กำหนดความกว้างสูงสุด */
+    height: 306px;
+    background-color: #23395B;
+    margin: auto; /* ทำให้อยู่ตรงกลาง */
+    position: absolute; /* ทำให้ติดกับบาร์ด้านล่าง */
+    bottom: 30px; /* ติดกับด้านล่าง */
+    right: 19px;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    padding: 10px 10px;
+    gap: 5px;
+    overflow-y: auto;
+}
+
+.menu_select{
+    width: 200px;
+    height: 25px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: background-color 0.3s ease;
+}
+
+.menu_select span{
+    color: #ffffff;
+    font-weight: 400;
+    font-size: 20px;
+    width: 100%; 
+    display: block;
+    transition: color 0.3s ease
+}
+
+.menu_select:hover { /* เพิ่ม hover effect ให้กับ menu_select */
+    background-color: #2C2C2C; /* เปลี่ยนสีพื้นหลังเมื่อ hover */
+    border-radius: 8px;
+}
+
+.menu_select:hover span { /* เปลี่ยนสีตัวอักษรเมื่อ hover */
+    color: #ffffff; /* เปลี่ยนสีตัวอักษรเมื่อ hover */
+}
+
+
+
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    gap: 25px;
+    margin-right: 20px; /* ระยะห่างระหว่างกลุ่ม input */
+}
+.header-left {
+    display: flex; /* ใช้ flexbox เพื่อจัดเรียง label และ input */
+    align-items: center; /* จัดแนวให้ทุกอย่างอยู่ในแนวเดียวกัน */
+    margin-right: 15px;
+    
+}
+
+.header-left label {
+    margin-right: 10px; /* ระยะห่างระหว่าง label และ input */
+    font-weight: bold; /* ทำให้ label หนักขึ้น */
+}
+
+.date-input {
+    padding: 10px; /* เพิ่ม padding ให้กับ input */
+    border: 2px solid #ccc; /* เส้นขอบ */
+    border-radius: 20px; /* ทำให้มุมโค้งมน */
+    width: 200px; /* กำหนดความกว้าง */
+    outline: none; /* ไม่มีเส้นขอบเมื่อ focus */
+    transition: border-color 0.3s ease; /* เพิ่ม transition effect */
+}
+.date-input:focus {
+    border-color: #007bff; /* เปลี่ยนสีเส้นขอบเมื่อ focus */
+}
+.header-left svg{
+    width: 45px; /* ปรับขนาดให้เหมาะสม */
+    height: 45px; /* ปรับขนาดให้เหมาะสม */
+    margin-right: 10px; /* เพิ่มระยะห่างระหว่าง SVG และวันที่ */
+    vertical-align: middle;
+}
+.header input {
+    margin-bottom: 5px; /* ระยะห่างระหว่าง label และ input */
+    font-weight: bold;
+    padding: 10px; /* เพิ่ม padding ให้กับ input */
+    border: 8px solid #ccc; /* เพิ่มเส้นขอบ */
+    border-radius: 50px; /* ทำให้มุมโค้งมน */
+    width: 20%; /* ให้ input เต็มความกว้าง */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin: 3px;
+    min-width: 220px; /* ปรับตามความเหมาะสม */
+}
+
+
+.allergy-container {
+    display: flex; /* ใช้ flexbox เพื่อจัดเรียง label, input และ button */
+    align-items: center; /* จัดแนวให้ทุกอย่างอยู่ในแนวเดียวกัน */
+    background-color: #e74c3c; /* สีพื้นหลัง */
+    border-radius: 8px; /* ทำให้มุมโค้งมน */
+    padding: 5px 10px; /* เพิ่ม padding */
+}
+
+.allergy-container label {
+    margin-right: 10px; /* ระยะห่างระหว่าง label และ input */
+    font-weight: bold; /* ทำให้ label หนักขึ้น */
+    color: rgb(255, 255, 255); /* เปลี่ยนสีตัวอักษร */
+    white-space: nowrap;
+}
+
+.allergy-container input {
+    padding: 10px; /* เพิ่ม padding ให้กับ input */
+    border: none; /* ไม่มีเส้นขอบ */
+    border-radius: 4px; /* ทำให้มุมโค้งมน */
+    width: 200px; /* กำหนดความกว้าง */
+}
+
+.clear-button {
+    margin-left: 10px; /* ระยะห่างระหว่าง input และ button */
+    height: 50px;
+    padding: 10px 15px; /* เพิ่ม padding ให้กับ button */
+    border: none; /* ไม่มีเส้นขอบ */
+    border-radius: 4px; /* ทำให้มุมโค้งมน */
+    background-color: white; /* สีพื้นหลังของ button */
+    color: #e74c3c; /* เปลี่ยนสีตัวอักษร */
+    font-weight: bold; /* ทำให้ตัวอักษรหนาขึ้น */
+    cursor: pointer; /* เปลี่ยนเคอร์เซอร์เมื่อ hover */
+    transition: background-color 0.3s ease; /* เพิ่ม transition effect */
+}
+
+.clear-button:hover {
+    background-color: #6d1919; /* เปลี่ยนสีพื้นหลังเมื่อ hover */
+    color: #ffffff;
+}
+
+.header-left label {
+    margin-right: 10px;
+    white-space: nowrap; /* ป้องกันข้อความขึ้นบรรทัดใหม่ */
+    flex-shrink: 0; /* ป้องกัน label หด */
+}
+
+
+/* body */
+
+
+.patient-info .info {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2px;
+    flex-wrap: nowrap;
+    align-items: center;
+}
+
+.patient-info label {
+    min-width: 20px; /* กำหนดความกว้างขั้นต่ำ */
+    max-width: 200px; /* กำหนดความกว้างสูงสุด */
+     height: 45px; /* กำหนดความสูงคงที่ */
+    display: flex;
+    align-items: center;
+    background-color: #4a6fa5; /* สีพื้นหลังแบบ navy blue */
+    padding: 8px 15px;
+    border-radius: 10px; /* ทำให้มุมมน */
+    color: white;
+    white-space: nowrap;
+    font-weight: 100;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+.patient-info label input {
+    width: 60px; /* ความกว้างคงที่สำหรับ input */
+    text-align: center; 
+    font-weight: 100;
+}
+
+.patient-info label:nth-child(2n) {
+    background-color: transparent;
+    color: #000; /* สีตัวอักษรดำสำหรับพื้นหลังโปร่งใส */
+    white-space: nowrap;
+    display: flex;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.patient-info label span:first-child {
+    background-color: #4a6fa5;
+    color: rgb(0, 0, 0);
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-weight: 500;
+    
+}
+.patient-info label:nth-child(2n) {
+    background-color: transparent;
+    color: #000;
+}
+
+/* สำหรับกล่องคี่ */
+.patient-info label:nth-child(2n-1) {
+    background-color: #4a6fa5;
+    color: white;
+}
+.patient-info label:nth-child(2n) input::placeholder {
+    color: rgba(0, 0, 0, 1); /* สีดำ opacity 70% */
+}
+
+/* สำหรับกล่องสีน้ำเงิน (คี่) */
+.patient-info label:nth-child(2n-1) input::placeholder {
+    color: rgba(255, 255, 255, 0.7); /* สีขาว opacity 70% */
+}
+
+.patient-info input {
+    background: transparent;
+    border: none;
+    color: white;
+    margin-left: 5px;
+    width: 60px; /* ความกว้างคงที่สำหรับช่องกรอกตัวเลข */
+}
+
+.patient-info input::placeholder {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.main-container {
+    display: flex;
+    flex-direction: column;
+    gap: 30px; /* ระยะห่างระหว่าง patient info กับ menu tabs */
+    padding: 15px;
+    width: 100%;
+}
+
+.patient-info {
+    gap: 15px;
+    flex-wrap: nowrap;
+
+}
+.menu-tabs {
+    margin-bottom: 10px; /* ลดระยะห่าง */
+}
+.menu-tabs a,
+.menu-tabs button {
+    padding: 8px 10px;
+    border: 2px solid transparent;
+    border-radius: 10px;
+    background-color: #4a6fa5;
+    color: white;
+    cursor: pointer;
+    font-size: 14px;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+    text-decoration: none; /* สำหรับ link */
+    display: inline-block; /* สำหรับ link */
+}
+
+.menu-tabs a:hover,
+.menu-tabs button:hover {
+    border-color: #0070f8;
+    box-shadow: 0 0 10px rgba(255, 107, 107, 0.3);
+    transform: translateY(-2px);
+}
+
+/* สำหรับ active state */
+.menu-tabs a.active,
+.menu-tabs button.active {
+    border-color: #385d8a;
+    background-color: #385d8a;
+}
+
+.menu-tabs::-webkit-scrollbar {
+    display: none;
+}
+
+.menu-tabs {
+    display: flex;
+    gap: 8px;
+    padding: 15px 0;
+    overflow-x: auto;
+    flex-wrap: nowrap;
+    width: 100%; /* ให้กินพื้นที่เต็มความกว้าง */
+    justify-content: space-between; /* กระจายปุ่มให้เต็มพื้นที่ */
+}
+
+/* ปรับขนาดปุ่มให้ยืดหยุ่นมากขึ้น */
+.menu-tabs button {
+    padding: 8px 10px;
+    border: 2px solid transparent;
+    border-radius: 10px;
+    background-color: #000000;
+    color: white;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 400;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+    flex: 1; /* ให้ปุ่มยืดหยุ่นตามพื้นที่ */
+    min-width: fit-content; /* ป้องกันปุ่มหดเล็กเกินไป */
+}
+
+/* เอาล่ะถึงเมนูใบยาละจ้าาาาาา */

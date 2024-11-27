@@ -1,0 +1,7 @@
+.check_menu  label, span{
+    font-weight: 500;
+}
+
+.check_menu span{
+    width: 100px;
+}
